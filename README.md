@@ -1,4 +1,4 @@
-# Convergence-divergence game
+# Convergence–divergence game
 
 This repository contains code required to reproduce the results presented in the following paper:
 
@@ -20,15 +20,21 @@ To produce the numerical solutions of the particular instance of the game studie
 include("con-di.jl")
 Random.seed!(2020)
 popthreesweep("../results/sweep.csv")
-popthreesweep("../results/combo.csv")
+popthreesweepone("../results/combo.csv")
 ```
 
-Tested with Julia 1.4.2.
+The Julia packages DelimitedFiles, DifferentialEquations, LinearAlgebra and Random are required. Tested with Julia 1.4.2.
 
 
 ## Plots
 
+The figures in the above-cited paper were produced using a combination of R/ggplot2 and LaTeX/PGF/TikZ. To reproduce these, navigate into the `Rsession` directory and issue the following commands:
 
-## Acknowledgements
+FIXME
+
+R packages FIXME are required, as is an installation of a LaTeX distribution and pdflatex. Output is to `plots`.
+
+
+## Acknowledgement
 
 Preparation of this software was supported by the Federal Ministry of Education and Research (BMBF) and the Baden-Württemberg Ministry of Science as part of the Excellence Strategy of the German Federal and State Governments.

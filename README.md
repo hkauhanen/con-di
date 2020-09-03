@@ -30,14 +30,14 @@ The Julia packages DelimitedFiles, DifferentialEquations, LinearAlgebra and Rand
 
 The figures in the above-cited paper were produced using a combination of R/ggplot2 and LaTeX/PGF/TikZ. To reproduce these, first navigate into the `Rsession` directory and issue the following commands from R (the packages ggplot2, RColorBrewer, reshape2 and viridis are required):
 
-``` r
+``` R
 source("../R/plots.R")
 plot.all()
 ```
 
 This produces temporary plots which serve as input to the LaTeX/PGF/TikZ routines. The latter may be run using the `do_plots.sh` shell script in the `tex` directory:
 
-``` sh
+``` bash
 sh do_plots.sh
 ```
 

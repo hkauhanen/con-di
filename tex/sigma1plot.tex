@@ -1,0 +1,22 @@
+\documentclass[tikz,margin=5pt]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\input{brewercolors.tex}
+
+\begin{tikzpicture}
+  \node at (0, 0) {\includegraphics[scale=0.8]{../Rsession/bifusigma1.pdf}};
+  
+  \node[below] at (-0.5, -2.6) {$\mu$};
+  \node[left] at (-4.7, 0.33) {$x_1, x_2$};
+\end{tikzpicture}
+\end{document}
+

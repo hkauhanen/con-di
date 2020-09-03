@@ -7,14 +7,14 @@ This repository contains code required to reproduce the results presented in the
 Please cite this publication if you find this useful.
 
 
-## Symbolic calculation of Jacobian and eigenvalues
+## Symbolic calculation of equilibria, Jacobian and eigenvalues
 
-The Jacobian matrix and its eigenvalues can be computed in the case of the fully symmetric two-strategy, two-population game. Since carrying out the calculations by hand would be unwieldy, they have been implemented in the Maxima CAS (Computer Algebra System). A [wxmaxima](https://wxmaxima-developers.github.io/wxmaxima/) worksheet is included in the `wxmaxima` directory.
+The system's equilibria, the Jacobian matrix, and the Jacobian's eigenvalues can be computed in the case of the fully symmetric two-strategy, two-population game. Since carrying out the calculations by hand would be unwieldy, they have been implemented in the Maxima CAS (Computer Algebra System). A [wxmaxima](https://wxmaxima-developers.github.io/wxmaxima/) worksheet, along with HTML output, is included in the `wxmaxima` directory.
 
 
 ## Numerical solutions of asymmetric 3-population game
 
-To produce the numerical solutions of the particular instance of the game studied in Section REF of the paper, navigate to the `julia` directory, and, from the Julia REPL, issue the following commands:
+To produce the numerical solutions of the particular instance of the game studied in Section 6 of the paper, navigate to the `julia` directory, and, from the Julia REPL, issue the following commands:
 
 ``` julia
 include("con-di.jl")
@@ -28,11 +28,20 @@ The Julia packages DelimitedFiles, DifferentialEquations, LinearAlgebra and Rand
 
 ## Plots
 
-The figures in the above-cited paper were produced using a combination of R/ggplot2 and LaTeX/PGF/TikZ. To reproduce these, navigate into the `Rsession` directory and issue the following commands:
+The figures in the above-cited paper were produced using a combination of R/ggplot2 and LaTeX/PGF/TikZ. To reproduce these, first navigate into the `Rsession` directory and issue the following commands from R (the packages ggplot2, RColorBrewer, reshape2 and viridis are required):
 
-FIXME
+``` r
+source("../R/plots.R")
+plot.all()
+```
 
-R packages FIXME are required, as is an installation of a LaTeX distribution and pdflatex. Output is to `plots`.
+This produces temporary plots which serve as input to the LaTeX/PGF/TikZ routines. The latter may be run using the `do_plots.sh` shell script in the `tex` directory:
+
+``` sh
+sh do_plots.sh
+```
+
+Output is copied into the `plots` directory. Note that an installation of LaTeX (and pdflatex) is required, as are a number of LaTeX packages. In case of trouble, consult the error messages and install the required packages.
 
 
 ## Acknowledgement

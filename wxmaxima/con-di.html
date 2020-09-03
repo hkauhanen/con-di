@@ -1,0 +1,3940 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>con-di</title>
+    <meta name="generator" content="wxMaxima"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="con-di_htmlimg/con-di.css"/>
+  </head>
+  <body>
+    <!-- ****************************************************** -->
+    <!-- *        Created with wxMaxima version 19.07.0       * -->
+    <!-- ****************************************************** -->
+    <noscript>
+      <div class="error message">
+        <p>Please enable JavaScript in order to get a 2d display of the equations embedded in this web page.</p>
+      </div>
+    </noscript>
+    <p hidden="hidden">\(      \DeclareMathOperator{\abs}{abs}
+      \newcommand{\ensuremath}[1]{\mbox{$#1$}}
+\)</p>
+    <!-- Title cell -->
+    <div class="title">
+      <p>Replicator–mutator dynamics of linguistic convergence and divergence: Symbolic calculations
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>Henri Kauhanen 2020
+        <br/>https://github.com/hkauhanen/con-di/
+</p>
+    </div>
+    <!-- Section cell -->
+    <div class="section">
+      <p>  1 Notation
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>The following notational conventions are adopted (cf. Appendix B of the paper): x stands for x1, y stands for x2, f stands for f1, and g stands for f2. tx means tilde'ed x, and so on.
+</p>
+    </div>
+    <!-- Section cell -->
+    <div class="section">
+      <p>  2 Fitnesses
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>Here, we define the fitnesses that determine the game in the fully symmetric case.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i1)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">tx</span>
+            <span class="code_operator">:</span>
+            <span class="code_number">1</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">x</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(tx)</mtext>
+          </mtd>
+          <mtd>
+            <mn>1</mn>
+            <mi>−</mi>
+            <mi>x</mi>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i2)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">ty</span>
+            <span class="code_operator">:</span>
+            <span class="code_number">1</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">y</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(ty)</mtext>
+          </mtd>
+          <mtd>
+            <mn>1</mn>
+            <mi>−</mi>
+            <mi>y</mi>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i3)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">f</span>
+            <span class="code_operator">:</span>
+            <span class="code_variable">x</span>
+            <span class="code_operator">+</span>
+            <span class="code_variable">σ</span>·
+            <span class="code_variable">x</span>·
+            <span class="code_variable">ty</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(f)</mtext>
+          </mtd>
+          <mtd>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>σ</mi>
+            <mo>+</mo>
+            <mi>x</mi>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i4)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">g</span>
+            <span class="code_operator">:</span>
+            <span class="code_variable">y</span>
+            <span class="code_operator">+</span>
+            <span class="code_variable">σ</span>·
+            <span class="code_variable">y</span>·
+            <span class="code_variable">tx</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(g)</mtext>
+          </mtd>
+          <mtd>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>y</mi>
+            <mo>⁢</mo>
+            <mi>σ</mi>
+            <mo>+</mo>
+            <mi>y</mi>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i5)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">tf</span>
+            <span class="code_operator">:</span>
+            <span class="code_variable">tx</span>
+            <span class="code_operator">+</span>
+            <span class="code_variable">σ</span>·
+            <span class="code_variable">tx</span>·
+            <span class="code_variable">y</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(tf)</mtext>
+          </mtd>
+          <mtd>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>y</mi>
+            <mo>⁢</mo>
+            <mi>σ</mi>
+            <mi>−</mi>
+            <mi>x</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i6)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">tg</span>
+            <span class="code_operator">:</span>
+            <span class="code_variable">ty</span>
+            <span class="code_operator">+</span>
+            <span class="code_variable">σ</span>·
+            <span class="code_variable">ty</span>·
+            <span class="code_variable">x</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(tg)</mtext>
+          </mtd>
+          <mtd>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>σ</mi>
+            <mi>−</mi>
+            <mi>y</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Section cell -->
+    <div class="section">
+      <p>  3 Time derivative and Jacobian
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>Define time derivative and form Jacobian matrix.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i7)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">dotx</span>
+            <span class="code_operator">:</span> (
+            <span class="code_variable">tx</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">μ</span>)·
+            <span class="code_variable">x</span>·
+            <span class="code_variable">f</span>
+            <span class="code_operator">−</span> (
+            <span class="code_variable">x</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">μ</span>)·
+            <span class="code_variable">tx</span>·
+            <span class="code_variable">tf</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(dotx)</mtext>
+          </mtd>
+          <mtd>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>y</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mi>−</mi>
+                <mi>μ</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>y</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i8)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">doty</span>
+            <span class="code_operator">:</span> (
+            <span class="code_variable">ty</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">μ</span>)·
+            <span class="code_variable">y</span>·
+            <span class="code_variable">g</span>
+            <span class="code_operator">−</span> (
+            <span class="code_variable">y</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">μ</span>)·
+            <span class="code_variable">ty</span>·
+            <span class="code_variable">tg</span>
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(doty)</mtext>
+          </mtd>
+          <mtd>
+            <mi>y</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mi>−</mi>
+                <mi>y</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>y</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>y</mi>
+                <mi>−</mi>
+                <mi>μ</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>y</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>y</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i9)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">der</span>
+            <span class="code_operator">:</span> [
+            <span class="code_variable">dotx</span>, 
+            <span class="code_variable">doty</span>]
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(der)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>y</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mi>−</mi>
+                <mi>μ</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>y</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mi>−</mi>
+                <mi>y</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>y</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>y</mi>
+                <mi>−</mi>
+                <mi>μ</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>y</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>y</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i10)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">J</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">jacobian</span>(
+            <span class="code_variable">der</span>, [
+            <span class="code_variable">x</span>,
+            <span class="code_variable">y</span>])
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(J)</mtext>
+          </mtd>
+          <mtd>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mtable>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mi>x</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mi>x</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </mtd>
+                    <mtd>
+                      <mrow>
+                        <mi>−</mi>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mi>−</mi>
+                              <mi>x</mi>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                        <mi>−</mi>
+                        <msup>
+                          <mi>x</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                      </mrow>
+                    </mtd>
+                  </mtr>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mi>−</mi>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mi>−</mi>
+                              <mi>y</mi>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>y</mi>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                        <mi>−</mi>
+                        <msup>
+                          <mi>y</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                      </mrow>
+                    </mtd>
+                    <mtd>
+                      <mrow>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mi>y</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>y</mi>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>y</mi>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mi>y</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>μ</mi>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </mtd>
+                  </mtr>
+                </mtable>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Section cell -->
+    <div class="section">
+      <p>  4 Zero-mutation case
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>If μ = 0, there are nine equilibria.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i11)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">der0</span>
+            <span class="code_operator">:</span> [
+            <span class="code_function">subst</span>([
+            <span class="code_variable">μ</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">0</span>], 
+            <span class="code_variable">dotx</span>), 
+            <span class="code_function">subst</span>([
+            <span class="code_variable">μ</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">0</span>], 
+            <span class="code_variable">doty</span>)]
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(der0)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>y</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>y</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>,</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>y</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>y</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>y</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mi>y</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>y</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>y</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i12)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">sol0</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">solve</span>(
+            <span class="code_variable">der0</span>, [
+            <span class="code_variable">x</span>,
+            <span class="code_variable">y</span>])
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(sol0)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mn>0</mn>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mn>0</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mn>0</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mn>0</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mn>0</mn>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mn>0</mn>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>Their stabilities are as follows.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i13)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">J0</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">subst</span>([
+            <span class="code_variable">μ</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">0</span>], 
+            <span class="code_variable">J</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(J0)</mtext>
+          </mtd>
+          <mtd>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mtable>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mi>x</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>x</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mi>x</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>x</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </mtd>
+                    <mtd>
+                      <mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>x</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                        <mi>−</mi>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mi>−</mi>
+                              <mi>x</mi>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mi>x</mi>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                      </mrow>
+                    </mtd>
+                  </mtr>
+                  <mtr>
+                    <mtd>
+                      <mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>y</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                        <mi>−</mi>
+                        <msup>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mn>1</mn>
+                              <mi>−</mi>
+                              <mi>y</mi>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                          <mn>2</mn>
+                        </msup>
+                        <mo>⁢</mo>
+                        <mi>y</mi>
+                        <mo>⁢</mo>
+                        <mi>σ</mi>
+                      </mrow>
+                    </mtd>
+                    <mtd>
+                      <mrow>
+                        <mi>−</mi>
+                        <mi>y</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>y</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mi>y</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>y</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mi>−</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>y</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>−</mi>
+                            <mi>x</mi>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mi>−</mi>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mn>1</mn>
+                            <mi>−</mi>
+                            <mi>y</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mo>⁢</mo>
+                        <mi>y</mi>
+                        <mo>⁢</mo>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mrow>
+                              <mo>(</mo>
+                              <mrow>
+                                <mn>1</mn>
+                                <mi>−</mi>
+                                <mi>x</mi>
+                              </mrow>
+                              <mo>)</mo>
+                            </mrow>
+                            <mo>⁢</mo>
+                            <mi>σ</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                      </mrow>
+                    </mtd>
+                  </mtr>
+                </mtable>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i14)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">1</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o14) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>2</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i15)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">2</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o15) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i16)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">3</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o16) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mi>σ</mi>
+            <mi>−</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>2</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i17)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">4</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o17) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i18)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">5</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o18) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo>,</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i19)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">6</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o19) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i20)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">7</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o20) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mi>σ</mi>
+            <mi>−</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>2</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i21)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">8</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o21) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i22)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">sol0</span>[
+            <span class="code_number">9</span>]], 
+            <span class="code_variable">J0</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o22) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>2</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Section cell -->
+    <div class="section">
+      <p>  5 Stability of uniform state
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>Reversals of stability of the uniform state u = (1/2, 1/2) are all important. Here, we get the eigenvalues of the Jacobian, evaluated at u.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i23)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">u</span>
+            <span class="code_operator">:</span> [
+            <span class="code_number">1</span>
+            <span class="code_operator">/</span>
+            <span class="code_number">2</span>, 
+            <span class="code_number">1</span>
+            <span class="code_operator">/</span>
+            <span class="code_number">2</span>]
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(u)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>,</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i24)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">u_eig</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>([
+            <span class="code_variable">x</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">u</span>[
+            <span class="code_number">1</span>], 
+            <span class="code_variable">y</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">u</span>[
+            <span class="code_number">2</span>]], 
+            <span class="code_variable">J</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(u_eig)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>3</mn>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mo>+</mo>
+                    <mn>4</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>−</mi>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>1</mn>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo>,</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mi>σ</mi>
+                    <mo>+</mo>
+                    <mn>4</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>−</mi>
+                <mn>1</mn>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>These have zeroes at the following values of μ. These are two of our critical values of the mutation parameter.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i25)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>(
+            <span class="code_variable">u_eig</span>[
+            <span class="code_number">1</span>][
+            <span class="code_number">1</span>], 
+            <span class="code_variable">μ</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o25) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>μ</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mn>3</mn>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>4</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i26)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>(
+            <span class="code_variable">u_eig</span>[
+            <span class="code_number">1</span>][
+            <span class="code_number">2</span>], 
+            <span class="code_variable">μ</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o26) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>μ</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>4</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>In the full-mutation (μ = 1) case, we have the following in particular.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i27)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">u_eig1</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">subst</span>([
+            <span class="code_variable">μ</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">1</span>], 
+            <span class="code_variable">u_eig</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(u_eig1)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>3</mn>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo>,</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>3</mn>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Section cell -->
+    <div class="section">
+      <p>  6 Diagonal equilibria
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>For some values of μ, the game has equilibria on the diagonals D (where x = y) and tD (where x = 1 – y) different from the uniform state u = (1/2, 1/2). We solve for these by carrying out the relevant substitutions. Note that, due to symmetry, it suffices to consider dotx only.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i28)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">dotx_tD</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">subst</span>(
+            <span class="code_variable">y</span>
+            <span class="code_operator">=</span>
+            <span class="code_number">1</span>
+            <span class="code_operator">−</span>
+            <span class="code_variable">x</span>, 
+            <span class="code_variable">dotx</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(dotx_tD)</mtext>
+          </mtd>
+          <mtd>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <msup>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msup>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mi>−</mi>
+                <mi>μ</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <msup>
+                  <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                      <mn>1</mn>
+                      <mi>−</mi>
+                      <mi>x</mi>
+                    </mrow>
+                    <mo>)</mo>
+                  </mrow>
+                  <mn>2</mn>
+                </msup>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i29)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">sols_tD</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">solve</span>(
+            <span class="code_variable">dotx_tD</span>, 
+            <span class="code_variable">x</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(sols_tD)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mrow>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mi>−</mi>
+                        <mn>3</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>2</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                        <mo>+</mo>
+                        <mn>1</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mi>−</mi>
+                        <mn>4</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>6</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                        <mo>+</mo>
+                        <mn>2</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mi>−</mi>
+                    <mn>4</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msqrt>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mi>−</mi>
+                    <mi>μ</mi>
+                    <mi>−</mi>
+                    <mn>1</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>2</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mrow>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mi>−</mi>
+                        <mn>3</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>2</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                        <mo>+</mo>
+                        <mn>1</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mi>−</mi>
+                        <mn>4</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>6</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                        <mo>+</mo>
+                        <mn>2</mn>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mi>−</mi>
+                    <mn>4</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msqrt>
+                <mo>+</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>2</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i30)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">dotx_D</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">subst</span>(
+            <span class="code_variable">y</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">x</span>, 
+            <span class="code_variable">dotx</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(dotx_D)</mtext>
+          </mtd>
+          <mtd>
+            <mi>x</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mi>−</mi>
+                <mi>x</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>x</mi>
+                <mi>−</mi>
+                <mi>μ</mi>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>1</mn>
+                    <mi>−</mi>
+                    <mi>x</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mo>⁢</mo>
+                <mi>x</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mi>x</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i31)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">sols_D</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">solve</span>(
+            <span class="code_variable">dotx_D</span>, 
+            <span class="code_variable">x</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(sols_D)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>μ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>⁢</mo>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>4</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>2</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mi>−</mi>
+                    <mn>4</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msqrt>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>μ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>⁢</mo>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>4</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>2</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mi>−</mi>
+                    <mn>4</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msqrt>
+                <mo>+</mo>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Section cell -->
+    <div class="section">
+      <p>  7 Stability of D-diagonal equilibria
+</p>
+    </div>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>The D-diagonal equilibria both bifurcate to yield further equilibria as μ approaches 0. Although it has not been possible to analytically solve for those new equilibria (which lie outside each diagonal), we can identify the bifurcation points by examining the zero-crossing behaviour of the eigenvalues of the Jacobian evaluated at the D-diagonal equilibria.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i32)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">D_eq</span>
+            <span class="code_operator">:</span> [
+            <span class="code_variable">sols_D</span>[
+            <span class="code_number">1</span>], 
+            <span class="code_function">subst</span>([
+            <span class="code_variable">x</span>
+            <span class="code_operator">=</span>
+            <span class="code_variable">y</span>], 
+            <span class="code_variable">sols_D</span>[
+            <span class="code_number">1</span>])]
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(D_eq)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>x</mi>
+            <mi>=</mi>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>μ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>⁢</mo>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>4</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>2</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mi>−</mi>
+                    <mn>4</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msqrt>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>y</mi>
+            <mi>=</mi>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>μ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>⁢</mo>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mrow>
+                      <mo>(</mo>
+                      <mrow>
+                        <mn>4</mn>
+                        <mo>⁢</mo>
+                        <msup>
+                          <mi>μ</mi>
+                          <mn>2</mn>
+                        </msup>
+                        <mi>−</mi>
+                        <mn>2</mn>
+                        <mo>⁢</mo>
+                        <mi>μ</mi>
+                      </mrow>
+                      <mo>)</mo>
+                    </mrow>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mi>−</mi>
+                    <mn>4</mn>
+                    <mo>⁢</mo>
+                    <mi>μ</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msqrt>
+                <mi>−</mi>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mn>2</mn>
+                <mo>⁢</mo>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i33)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_variable">eig_D</span>
+            <span class="code_operator">:</span>
+            <span class="code_function">eigenvalues</span>(
+            <span class="code_function">subst</span>(
+            <span class="code_variable">D_eq</span>, 
+            <span class="code_variable">J</span>))
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(eig_D)</mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mo>[</mo>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mi>μ</mi>
+                  <mn>2</mn>
+                </msup>
+                <mo>⁢</mo>
+                <msup>
+                  <mi>σ</mi>
+                  <mn>2</mn>
+                </msup>
+                <mo>+</mo>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mn>2</mn>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mo>+</mo>
+                    <mn>4</mn>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mi>−</mi>
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>μ</mi>
+                <mo>⁢</mo>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>1</mn>
+              </mrow>
+            </mfrac>
+            <mo>,</mo>
+            <mi>μ</mi>
+            <mo>⁢</mo>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>4</mn>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mi>−</mi>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>,</mo>
+            <mo>[</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>]</mo>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Text cell -->
+    <div class="comment">
+      <p>Zeroes. The second element of the first of these is our third critical value of the mutation parameter.
+</p>
+    </div>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i34)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>(
+            <span class="code_variable">eig_D</span>[
+            <span class="code_number">1</span>][
+            <span class="code_number">1</span>], 
+            <span class="code_variable">μ</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o34) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>μ</mi>
+            <mi>=</mi>
+            <mi>−</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mn>2</mn>
+                </msqrt>
+                <mo>⁢</mo>
+                <msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                  </mrow>
+                </msqrt>
+                <mo>+</mo>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+              <msup>
+                <mi>σ</mi>
+                <mn>2</mn>
+              </msup>
+            </mfrac>
+            <mo>,</mo>
+            <mi>μ</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mrow>
+                <msqrt>
+                  <mn>2</mn>
+                </msqrt>
+                <mo>⁢</mo>
+                <msqrt>
+                  <mrow>
+                    <msup>
+                      <mi>σ</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                    <mo>⁢</mo>
+                    <mi>σ</mi>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                  </mrow>
+                </msqrt>
+                <mi>−</mi>
+                <mi>σ</mi>
+                <mi>−</mi>
+                <mn>2</mn>
+              </mrow>
+              <msup>
+                <mi>σ</mi>
+                <mn>2</mn>
+              </msup>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <!-- Code cell -->
+    <table>
+      <tr>
+        <td>
+          <span class="prompt">(%i35)	
+  </span>
+        </td>
+        <td>
+          <span class="input">
+            <span class="code_function">solve</span>(
+            <span class="code_variable">eig_D</span>[
+            <span class="code_number">1</span>][
+            <span class="code_number">2</span>], 
+            <span class="code_variable">μ</span>)
+            <span class="code_endofline">;</span>
+          </span>
+        </td>
+      </tr>
+    </table>
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable>
+        <mlabeledtr columnalign="left">
+          <mtd>
+            <mtext>(%o35) </mtext>
+          </mtd>
+          <mtd>
+            <mo>[</mo>
+            <mi>μ</mi>
+            <mi>=</mi>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mi>σ</mi>
+                <mo>+</mo>
+                <mn>4</mn>
+              </mrow>
+            </mfrac>
+            <mo>]</mo>
+          </mtd>
+        </mlabeledtr>
+      </mtable>
+    </math>
+    <hr/>
+    <p>
+      <small> Created with 
+        <a href="https://wxMaxima-developers.github.io/wxmaxima/">wxMaxima</a>.</small>
+    </p>
+  </body>
+</html>

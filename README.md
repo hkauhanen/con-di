@@ -9,7 +9,7 @@ Please cite this publication if you find this useful.
 
 ## Symbolic calculation of equilibria, Jacobian and eigenvalues
 
-The system's equilibria, the Jacobian matrix, and the Jacobian's eigenvalues can be computed in the case of the fully symmetric two-strategy, two-population game. Since carrying out the calculations by hand would be unwieldy, they have been implemented in the Maxima CAS (Computer Algebra System). A [wxmaxima](https://wxmaxima-developers.github.io/wxmaxima/) worksheet, along with HTML output, is included in the `wxmaxima` directory.
+The system's equilibria, the Jacobian matrix, and the Jacobian's eigenvalues can be computed in the case of the fully symmetric two-strategy, two-population game. Since carrying out the calculations by hand would be unwieldy, they have been implemented in the Maxima CAS (Computer Algebra System). A [wxmaxima](https://wxmaxima-developers.github.io/wxmaxima/) worksheet is included in the `wxmaxima` directory.
 
 
 ## Numerical solutions of asymmetric 3-population game

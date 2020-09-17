@@ -2,7 +2,7 @@
 
 This repository contains code required to reproduce the results presented in the following paper:
 
-> Kauhanen, H. (2020) Replicator–mutator dynamics of linguistic identity. Ms., University of Konstanz.
+> Kauhanen, H. (2020) A model of linguistic identity dynamics. Ms., University of Konstanz.
 
 Please cite this publication if you find this useful.
 

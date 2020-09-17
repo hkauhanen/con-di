@@ -1,5 +1,7 @@
 # Convergence–divergence game
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4034830.svg)](https://doi.org/10.5281/zenodo.4034830)
+
 This repository contains code required to reproduce the results presented in the following paper:
 
 > Kauhanen, H. (2020) A model of linguistic identity dynamics. Ms., University of Konstanz.

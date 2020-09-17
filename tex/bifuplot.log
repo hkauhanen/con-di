@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.2)  2 SEP 2020 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.2)  17 SEP 2020 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -844,7 +844,7 @@ Here is how much of TeX's memory you used:
 enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/n
 ewtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/Ne
 wTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb>
-Output written on bifuplot.pdf (1 page, 284833 bytes).
+Output written on bifuplot.pdf (1 page, 284835 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream

@@ -32,6 +32,7 @@ The figures in the above-cited paper were produced using a combination of R/ggpl
 
 ``` R
 source("../R/plots.R")
+set.seed(2020)
 plot.all()
 ```
 

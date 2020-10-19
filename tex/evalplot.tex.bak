@@ -1,0 +1,27 @@
+\documentclass[tikz,margin=5pt]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+%\usepackage{newtxtext}
+%\usepackage{newtxmath}
+\usepackage{mathpazo}
+
+\usepackage{graphicx}
+
+\begin{document}
+\begin{tikzpicture}
+  \node at (0,0) {\includegraphics[scale=1.0]{../Rsession/eval.pdf}};
+  
+  \node[left] at (4.6, 4.2) {\small $\mu = 0.1$};
+  \node[left] at (4.6, 2.5) {\small $\mu = 0.2$};
+  \node[left] at (4.6, 1.8) {\small $\mu = 0.23$};
+  \node[left] at (4.6, 1.1) {\small $\mu = 0.25$};
+  \node[left] at (4.6, -0.6) {\small $\mu = 0.3$};
+  \node[left] at (4.6, -2.3) {$\delta = 0.08$};
+
+  \node[below] at (0.65, -4.5) {\large $\sigma$};
+  \node[left] at (-4.6, 0.4) {\large $\delta$};
+\end{tikzpicture}
+\end{document}
+

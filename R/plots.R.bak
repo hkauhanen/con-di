@@ -19,7 +19,7 @@ deffam <- "Palatino"
 spacesize <- 2.5
 spacesizeh <- 2.4
 
-# Palettes
+# Palette for bifurcation plot
 mypal <- brewer.pal(4, "Set3")
 
 
@@ -29,63 +29,30 @@ plot.all <- function() {
   pdf("sweep.pdf", width=6, height=1.95, family=deffam)
   print(plot_numerics_sweep())
   dev.off()
-  embedFonts("sweep.pdf")
 
   pdf("indiv.pdf", width=5.3, height=1.95, family=deffam)
   print(plot_numerics_individualpoint())
   dev.off()
-  embedFonts("indiv.pdf")
 
   pdf("phaseI.pdf", height=spacesizeh, width=spacesize, family=deffam)
   print(plot.space.FS(which="I"))
   dev.off()
-  embedFonts("phaseI.pdf")
 
   pdf("phaseII.pdf", height=spacesizeh, width=spacesize, family=deffam)
   print(plot.space.FS(which="II"))
   dev.off()
-  embedFonts("phaseII.pdf")
 
   pdf("phaseIII.pdf", height=spacesizeh, width=spacesize, family=deffam)
   print(plot.space.FS(which="III"))
   dev.off()
-  embedFonts("phaseIII.pdf")
 
   pdf("phaseIV.pdf", height=spacesizeh, width=spacesize, family=deffam)
   print(plot.space.FS(which="IV"))
   dev.off()
-  embedFonts("phaseIV.pdf")
 
   pdf("phases.pdf", width=5, height=2.5, family=deffam)
   print(plot.phases.FS())
   dev.off()
-  embedFonts("phases.pdf")
-
-  pdf("eval.pdf", width=4, height=4, family=deffam)
-  print(empirical_eval())
-  dev.off()
-  embedFonts("eval.pdf")
-}
-
-
-# Nice-looking scientific notation; from https://stackoverflow.com/questions/11610377/how-do-i-change-the-formatting-of-numbers-on-an-axis-with-ggplot
-fancy_scientific <- function(l) {
-  # turn in to character string in scientific notation
-  l <- format(l, scientific = TRUE)
-  l <- gsub("0e\\+00", "0", l)
-
-  # quote the part before the exponent to keep all the digits
-  l <- gsub("^(.*)e", "'\\1'e", l)
-
-  # remove + after exponent
-  l <- gsub("e\\+", "e", l)
-
-  # turn the 'e+' into plotmath format
-  l <- gsub("e", "%*%10^", l)
-  #l <- gsub("\\'1[\\.0]*\\'\\%\\*\\%", "", l)
-
-  # return this as an expression
-  parse(text=l)
 }
 
 
@@ -418,68 +385,3 @@ plot.bifu.FS <- function(alpha = 1,
 }
 
 
-# Quantitative empirical evaluation plot
-empirical_eval <- function(empirical_delta = 0.08,
-                           mus = c(0.1, 0.2, 0.227, 0.25, 0.3),
-                           sigmas = exp(seq(from=log(0.01), to=log(100), length.out=1000))) {
-  df <- expand.grid(mu=mus, sigma=sigmas, delta=0)
-  df$delta <- sqrt(-(3*df$sigma^2 + 4*df$sigma)*df$mu^2 - 2*(df$sigma^2 + 3*df$sigma + 2)*df$mu + (df$sigma + 1)^2)/(2*(df$sigma*df$mu + df$sigma + 1))
-
-  g <- ggplot(df, aes(x=sigma, y=delta, group=mu, color=mu)) + geom_line()
-  g <- g + theme_bw() + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), axis.text=element_text(color="black"), legend.position="none")
-  g <- g + scale_x_log10(labels=fancy_scientific) + annotation_logticks(sides="bt", size=0.3)
-  g <- g + ylim(0, 0.5)
-  g <- g + scale_color_distiller(palette="Set1")
-  g <- g + geom_hline(yintercept=empirical_delta, lty=2)
-  g <- g + xlab("") + ylab("")
-
-  g
-}
-
-
-# Quantitative empirical evaluation plot; faceted version
-empirical_eval_facet <- function(empirical_delta = 0.08,
-                           mus = c(0.2, 0.23, 0.25, 0.3),
-                           sigmas = exp(seq(from=log(0.01), to=log(100), length.out=1000))) {
-  df <- expand.grid(mu=mus, sigma=sigmas, delta=0)
-  
-  get_delta <- function(sigma, mu) {
-    df$delta <- sqrt(-(3*sigma^2 + 4*sigma)*mu^2 - 2*(sigma^2 + 3*sigma + 2)*mu + (sigma + 1)^2)/(2*(sigma*mu + sigma + 1))
-  }
-
-  df$delta <- get_delta(df$sigma, df$mu)
-
-  g <- ggplot(df, aes(x=sigma, y=delta, group=mu, color=mu)) + geom_line()
-  g <- g + theme_bw() + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), axis.text=element_text(color="black"), legend.position="none")
-  g <- g + scale_x_log10(labels=fancy_scientific, expand=c(0,0)) + annotation_logticks(sides="b")
-  g <- g + scale_y_continuous(expand=c(0,0), limits=c(0, 0.4))
-  g <- g + scale_color_distiller(palette="Dark2")
-  g <- g + geom_hline(yintercept=empirical_delta, lty=2)
-  g <- g + xlab("") + ylab("")
-
-  # add envelopes
-  if (1==0) {
-  g <- g + geom_hline(yintercept=get_delta(c(0.00001, 100000), 0.1), color=evalpal[1], lty=2, alpha=0.5)
-  g <- g + geom_hline(yintercept=get_delta(c(0.00001, 100000), 0.2), color=evalpal[2], lty=2, alpha=0.5)
-  g <- g + geom_hline(yintercept=get_delta(c(0.00001, 100000), 0.23), color=evalpal[3], lty=2, alpha=0.5)
-  g <- g + geom_hline(yintercept=get_delta(c(0.00001, 100000), 0.25), color=evalpal[4], lty=2, alpha=0.5)
-  g <- g + geom_hline(yintercept=get_delta(c(0.00001, 100000), 0.3), color=evalpal[5], lty=2, alpha=0.5)
-  }
-
-  polydf <- NULL
-  for (mu in mus) {
-    polydf <- rbind(polydf, data.frame(sigma=0, delta=0, mu=mu, x=c(min(sigmas), max(sigmas), max(sigmas), min(sigmas)), y=c(get_delta(0.00001, mu), get_delta(0.00001, mu), get_delta(100000, mu), get_delta(100000, mu))))
-  }
-  polydf$y <- ifelse(is.na(polydf$y), 0.0, polydf$y)
-  g <- g + geom_polygon(data=polydf, aes(x=x, y=y, fill=mu), color=NA, lty=2, alpha=0.1) + facet_wrap(.~mu, nrow=1) + scale_fill_distiller(palette="Dark2")
-
-  if (1==0) {
-  g <- g + geom_polygon(inherit.aes=FALSE, data=data.frame(x=c(min(sigmas), max(sigmas), max(sigmas), min(sigmas)), y=c(get_delta(0.00001, 0.1), get_delta(0.00001, 0.1), get_delta(100000, 0.1), get_delta(100000, 0.1))), aes(x=x, y=y), fill=evalpal[5], alpha=0.2)
-  g <- g + geom_polygon(inherit.aes=FALSE, data=data.frame(x=c(min(sigmas), max(sigmas), max(sigmas), min(sigmas)), y=c(get_delta(0.00001, 0.2), get_delta(0.00001, 0.2), get_delta(100000, 0.2), get_delta(100000, 0.2))), aes(x=x, y=y), fill=evalpal[4], alpha=0.2)
-  g <- g + geom_polygon(inherit.aes=FALSE, data=data.frame(x=c(min(sigmas), max(sigmas), max(sigmas), min(sigmas)), y=c(get_delta(0.00001, 0.23), get_delta(0.00001, 0.23), get_delta(100000, 0.23), get_delta(100000, 0.23))), aes(x=x, y=y), fill=evalpal[3], alpha=0.2)
-  g <- g + geom_polygon(inherit.aes=FALSE, data=data.frame(x=c(min(sigmas), max(sigmas), max(sigmas), min(sigmas)), y=c(get_delta(0.00001, 0.25), get_delta(0.00001, 0.25), get_delta(100000, 0.25), get_delta(100000, 0.25))), aes(x=x, y=y), fill=evalpal[2], alpha=0.2)
-  g <- g + geom_polygon(inherit.aes=FALSE, data=data.frame(x=c(min(sigmas), max(sigmas), max(sigmas), min(sigmas)), y=c(get_delta(0.00001, 0.3), get_delta(0.00001, 0.3), get_delta(100000, 0.3), get_delta(100000, 0.3))), aes(x=x, y=y), fill=evalpal[1], alpha=0.2)
-  }
-
-  g
-}

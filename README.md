@@ -1,6 +1,6 @@
 # Convergence–divergence game
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4106681.svg)](https://doi.org/10.5281/zenodo.4106681)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4034829.svg)](https://doi.org/10.5281/zenodo.4034829)
 
 This repository contains code required to reproduce the results presented in the following paper:
 

@@ -12,8 +12,8 @@ source("../R/verger.R")
 
 
 # Font family
-#deffam <- "Times"
-deffam <- "Palatino"
+deffam <- "Times"
+#deffam <- "Palatino"
 
 # Dimensions for phase space plots
 spacesize <- 2.5
